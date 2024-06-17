@@ -30,7 +30,7 @@ SYNONYM_THRESH=0.8
 GPUS=0
 LLM_API=openai
 RETRIEVER=colbertv2
-OPENAI_API_KEY=sk-cyKVhwtgX6g2aiVGA8C55eAa771749628fAbD0A9075214F8 OPENAI_BASE_URL=http://112.28.49.224:18000/v1 python src/ircot_hipporag.py --dataset $DATA --retriever $RETRIEVER --llm $LLM_API --llm_model $LLM --max_steps 1 --doc_ensemble f --top_k 10  --sim_threshold $SYNONYM_THRESH --damping 0.5
+OPENAI_API_KEY=sk-cyKVhwtgX6g2aiVGA8C55eAa771749628fAbD0A9075214F8 OPENAI_BASE_URL=http://112.28.49.224:18000/v1 python src/ircot_hipporag.py --dataset $DATA --retriever $RETRIEVER --llm $LLM_API --llm_model $LLM --max_steps 3 --doc_ensemble f --top_k 10  --sim_threshold $SYNONYM_THRESH --damping 0.5
 ```
 
 ## IRCOT Instruction

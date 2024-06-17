@@ -97,10 +97,12 @@ def reason_step(dataset, few_shot: list, query: str, passages: list, thoughts: l
 
     messages = ChatPromptTemplate.from_messages([SystemMessage(ircot_reason_instruction + '\n\n' + prompt_demo),
                                                  HumanMessage(prompt_user)]).format_prompt()
-
+    print(f'==> ircot: {messages.to_messages()}')
     try:
         chat_completion = client.invoke(messages.to_messages())
+        print(f'==> chat_completion: {chat_completion}')
         response_content = chat_completion.content
+        print(f'==> response_content: {response_content}')
     except Exception as e:
         print(e)
         return ''
@@ -133,7 +135,7 @@ if __name__ == '__main__':
 
     client = init_langchain_model(args.llm, args.llm_model)
     llm_model_name_processed = args.llm_model.replace('/', '_').replace('.', '_')
-    if args.llm_model == 'gpt-3.5-turbo-1106':  # Default OpenIE system
+    if args.llm_model == 'qwen':  # Default OpenIE system
         colbert_configs = {'root': f'data/lm_vectors/colbert/{args.dataset}', 'doc_index_name': 'nbits_2', 'phrase_index_name': 'nbits_2'}
     else:
         colbert_configs = {'root': f'data/lm_vectors/colbert/{args.dataset}_{args.llm_model}', 'doc_index_name': 'nbits_2', 'phrase_index_name': 'nbits_2'}
