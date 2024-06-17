@@ -1,0 +1,71 @@
+	strings	type
+0	american	query
+1	american scientist	query
+2	april 25  1971	query
+3	biochemist	query
+4	bioengineering	query
+5	braincheck	query
+6	center for science and law	query
+7	creating and developing hydrogel tissue chemistry	query
+8	creating and developing optogenetics	query
+9	d h  chen foundation professor	query
+10	david eagleman	query
+11	december 22  1955	query
+12	department of molecular and cellular physiology	query
+13	devices	query
+14	digital cognitive health platform	query
+15	dysfunction in neurological and psychiatric disease	query
+16	formemrs	query
+17	german american	query
+18	health systems	query
+19	integrated optical and genetic strategies	query
+20	karl alexander deisseroth	query
+21	legal system	query
+22	medical practices	query
+23	modern neuroscience	query
+24	neosensory	query
+25	neurology	query
+26	neuroscience	query
+27	normal neural circuit function	query
+28	professor	query
+29	psychiatry and behavioral sciences	query
+30	school of medicine	query
+31	sensory substitution	query
+32	stanford university	query
+33	synaptic transmission	query
+34	thomas c  sudhof	query
+0	american	kb
+1	american scientist	kb
+2	april 25  1971	kb
+3	biochemist	kb
+4	bioengineering	kb
+5	braincheck	kb
+6	center for science and law	kb
+7	creating and developing hydrogel tissue chemistry	kb
+8	creating and developing optogenetics	kb
+9	d h  chen foundation professor	kb
+10	david eagleman	kb
+11	december 22  1955	kb
+12	department of molecular and cellular physiology	kb
+13	devices	kb
+14	digital cognitive health platform	kb
+15	dysfunction in neurological and psychiatric disease	kb
+16	formemrs	kb
+17	german american	kb
+18	health systems	kb
+19	integrated optical and genetic strategies	kb
+20	karl alexander deisseroth	kb
+21	legal system	kb
+22	medical practices	kb
+23	modern neuroscience	kb
+24	neosensory	kb
+25	neurology	kb
+26	neuroscience	kb
+27	normal neural circuit function	kb
+28	professor	kb
+29	psychiatry and behavioral sciences	kb
+30	school of medicine	kb
+31	sensory substitution	kb
+32	stanford university	kb
+33	synaptic transmission	kb
+34	thomas c  sudhof	kb

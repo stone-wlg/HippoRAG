@@ -36,7 +36,9 @@ def named_entity_recognition(passage: str):
     while not_done:
         try:
             if isinstance(client, ChatOpenAI):  # JSON mode
+                print('imhere8:', ner_messages.to_messages())
                 chat_completion = client.invoke(ner_messages.to_messages(), temperature=0, response_format={"type": "json_object"})
+                print('imhere9:', chat_completion)
                 response_content = chat_completion.content
                 response_content = eval(response_content)
                 total_tokens += chat_completion.response_metadata['token_usage']['total_tokens']
@@ -137,6 +139,7 @@ if __name__ == '__main__':
     print(arg_str)
 
     client = init_langchain_model(args.llm, model_name)  # LangChain model
+
     already_done = False
 
     try:
@@ -151,7 +154,7 @@ if __name__ == '__main__':
             if prev_num_passages < len(possible_json['docs']):
                 prev_num_passages = len(possible_json['docs'])
                 new_json_temp = possible_json
-
+        
         existing_json = new_json_temp['docs']
         if 'ents_by_doc' in new_json_temp:
             ents_by_doc = new_json_temp['ents_by_doc']
@@ -182,7 +185,6 @@ if __name__ == '__main__':
                 print('Using Auxiliary File: {}'.format(auxiliary_file))
                 break
 
-
     def extract_openie_from_triples(triple_json):
 
         new_json = []
@@ -191,7 +193,7 @@ if __name__ == '__main__':
         chatgpt_total_tokens = 0
 
         for i, r in tqdm(triple_json, total=len(triple_json)):
-
+            
             passage = r['passage']
 
             if i < len(existing_json):
@@ -201,12 +203,12 @@ if __name__ == '__main__':
                     doc_entities = ents_by_doc[i]
                 else:
                     doc_entities, total_ner_tokens = named_entity_recognition(passage)
-
+                    print('==> imhere7')
                     doc_entities = list(np.unique(doc_entities))
                     chatgpt_total_tokens += total_ner_tokens
 
                     ents_by_doc.append(doc_entities)
-
+                
                 triples, total_tokens = openie_post_ner_extract(passage, doc_entities, model_name)
 
                 chatgpt_total_tokens += total_tokens
@@ -235,13 +237,13 @@ if __name__ == '__main__':
 
     for split in splits:
         args.append([(i, extracted_triples_subset[i]) for i in split])
-
+    
     if num_processes > 1:
         with Pool(processes=num_processes) as pool:
             outputs = pool.map(extract_openie_from_triples, args)
     else:
         outputs = [extract_openie_from_triples(arg) for arg in args]
-
+    
     new_json = []
     all_entities = []
     chatgpt_total_tokens = 0
@@ -250,7 +252,7 @@ if __name__ == '__main__':
         new_json.extend(output[0])
         all_entities.extend(output[1])
         chatgpt_total_tokens += output[2]
-
+    
     if not (already_done):
         avg_ent_chars = np.mean([len(e) for e in all_entities])
         avg_ent_words = np.mean([len(e.split()) for e in all_entities])

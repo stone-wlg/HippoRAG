@@ -158,6 +158,7 @@ if __name__ == '__main__':
     q_entities_by_doc = []
 
     for doc_ents in tqdm(queries_full.triples):
+        print(f'==> {doc_ents}')
         doc_ents = eval(doc_ents)['named_entities']
         try:
             clean_doc_ents = [processing_phrases(p) for p in doc_ents]

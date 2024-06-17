@@ -1,0 +1,39 @@
+	strings	type
+0	applies	query
+1	born on	query
+2	develops	query
+3	develops for	query
+4	directs	query
+5	equivalent	query
+6	is	query
+7	is a	query
+8	is ceo and co founder of	query
+9	is chief science officer and co founder of	query
+10	is known for	query
+11	seeks to align	query
+12	seeks to align with	query
+13	studies	query
+14	teaches	query
+15	teaches at	query
+16	used in	query
+17	works at	query
+18	works in	query
+0	applies	kb
+1	born on	kb
+2	develops	kb
+3	develops for	kb
+4	directs	kb
+5	equivalent	kb
+6	is	kb
+7	is a	kb
+8	is ceo and co founder of	kb
+9	is chief science officer and co founder of	kb
+10	is known for	kb
+11	seeks to align	kb
+12	seeks to align with	kb
+13	studies	kb
+14	teaches	kb
+15	teaches at	kb
+16	used in	kb
+17	works at	kb
+18	works in	kb
