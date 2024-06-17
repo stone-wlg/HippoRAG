@@ -1,4 +1,5 @@
 ## Usages
+https://www.51cto.com/aigc/922.html
 ```sh
 $ python -m venv ./myenv
 $ source ./myenv/bin/activate
